@@ -1,0 +1,53 @@
+cutoff: 4.5
+preprocessing:
+  graph:
+    switch_params:
+      switch_type: polynomial
+      p: 5.
+      trainable: False
+
+energy_terms: ["nn_energy","energy_shift"]
+
+modules:
+
+  nn_energy:
+    module_name: MACE
+    output_irreps: "1x0e"
+    hidden_irreps: "256x0e+256x1o"
+    readout_mlp_irreps: "16x0e"
+    ninteractions: 2
+    radial_basis: # probably not the same normalization as in MACE-torch ...
+      basis: bessel
+      dim: 8
+      trainable: False
+      alt_bessel_norm: True
+    avg_num_neighbors: 25.57754135131836
+    scalar_output: True
+    lmax: 3
+    correlation: 3
+    symmetric_tensor_product_basis: False
+    skip_connection_first_layer: True
+    activation: silu
+    zmax: 118
+    convolution_mode: 0
+  
+  sum_layers:
+    module_name: sum_axis
+    axis: [1,2]
+    key: nn_energy
+  
+  scale_shift:
+    module_name: activation
+    activation: identity
+    key: nn_energy
+    scale_out: 0.02955895460120917
+    shift_out: 0.006055514143288505
+
+  
+  energy_shift:
+    module_name: chemical_constant
+    value: 0.
+    trainable: True
+
+  
+  
