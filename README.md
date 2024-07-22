@@ -30,7 +30,7 @@ If you use any of the models provided in this repository, please cite the corres
 T. Plé, O. Adjoua, L. Lagardère and J-P. Piquemal. FeNNol: an Efficient and Flexible Library for Building Force-field-enhanced Neural Network Potentials. arXiv preprint arXiv:2405.01491 (2024)
 ```
 
-```
+```bib
 @article{ple2024fennol,
   title={FeNNol: an Efficient and Flexible Library for Building Force-field-enhanced Neural Network Potentials},
   author={Pl{\'e}, Thomas and Adjoua, Olivier and Lagard{\`e}re, Louis and Piquemal, Jean-Philip},
