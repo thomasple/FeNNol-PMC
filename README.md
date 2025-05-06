@@ -2,6 +2,7 @@
 This repository contains a collection of pre-trained models compatible with the [FeNNol library](https://github.com/thomasple/FeNNol).
 
 ## Available models
+- FeNNix-Bio1 (**AVAILABLE SOON !**)
 - ANI1x, ANI1ccx, ANI2x 
 - MACE-OFF23 (small, medium, large)
 - MACE-MP (small, medium, large)
